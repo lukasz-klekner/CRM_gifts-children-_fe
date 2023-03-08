@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { GiftItem } from "../../types/gift"
+import { GiftTable } from "./GiftTable"
 
 export const GiftList = () => {
     const [giftList, setGiftList] = useState<GiftItem[] | null>(null)
@@ -16,5 +17,10 @@ export const GiftList = () => {
     if(!giftList){
         return <p>Loading ...</p>
     }
-    return null
+    return (
+        <>
+            <h2>Gifts</h2>
+            <GiftTable gifts={giftList} />
+        </>
+    )
 }

@@ -1,5 +1,5 @@
 export interface GiftItem {
-    id: string
+    _id: string
     name: string
-    count: number
+    amount: number
 }
