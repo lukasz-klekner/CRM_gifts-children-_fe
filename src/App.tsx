@@ -1,9 +1,10 @@
 import React from 'react';
+import { GiftList } from './components/Gift/GiftList';
 
 function App() {
   return (
     <div className="App">
-      Hello React!
+      <GiftList />
     </div>
   );
 }
