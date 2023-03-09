@@ -1,4 +1,5 @@
-import { GiftItem } from "../../types/gift"
+import { GiftItem } from "types"
+
 import { GiftTableRow } from "./GiftTableRow"
 
 interface GiftTableProps {
@@ -15,7 +16,7 @@ export const GiftTable = ({ gifts }: GiftTableProps) => (
                 </tr>
             </thead>
             <tbody>
-                {gifts.map(gift=> <GiftTableRow key={gift._id} {... gift} /> )}
+                {gifts.map(gift=> <GiftTableRow key={gift._id?.toString()} {... gift} /> )}
             </tbody>
         </table>
 )

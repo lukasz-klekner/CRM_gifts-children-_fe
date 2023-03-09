@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "types":[
+                "../CRM_gifts-children/types"
+            ]
+        }
+    }
+}

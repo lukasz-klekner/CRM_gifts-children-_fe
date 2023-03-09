@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { GiftItem } from "../../types/gift"
+import { GiftItem } from "types"
+
 import { GiftTable } from "./GiftTable"
 
 export const GiftList = () => {
@@ -10,6 +11,7 @@ export const GiftList = () => {
             const response = await fetch('http://localhost:3000/gift')
             const data: {giftsList: GiftItem[] } = await response.json()
 
+            console.log(data)
             setGiftList(data.giftsList)
         })()
     }, [])
