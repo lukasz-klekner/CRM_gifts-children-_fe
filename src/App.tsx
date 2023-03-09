@@ -1,10 +1,10 @@
 import React from 'react';
-import { GiftList } from './components/Gift/GiftList';
+import { GiftView } from './views/GiftView';
 
 function App() {
   return (
     <div className="App">
-      <GiftList />
+      <GiftView />
     </div>
   );
 }
