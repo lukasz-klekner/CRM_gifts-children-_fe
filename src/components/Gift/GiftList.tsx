@@ -6,14 +6,16 @@ import { GiftTable } from "./GiftTable"
 export const GiftList = () => {
     const [giftList, setGiftList] = useState<GiftItem[] | null>(null)
 
-    useEffect(() => {
-        (async () => {
-            const response = await fetch('http://localhost:3000/gift')
-            const data: {giftsList: GiftItem[] } = await response.json()
+    const getGiftList = async () => {
+        setGiftList(null)
+        const response = await fetch('http://localhost:3000/gift')
+        const data: {giftsList: GiftItem[] } = await response.json()
 
-            console.log(data)
-            setGiftList(data.giftsList)
-        })()
+        setGiftList(data.giftsList)
+    }
+
+    useEffect(() => {
+        getGiftList()
     }, [])
 
     if(!giftList){
@@ -22,7 +24,7 @@ export const GiftList = () => {
     return (
         <>
             <h2>Gifts</h2>
-            <GiftTable gifts={giftList} />
+            <GiftTable gifts={giftList} onGiftsChange={getGiftList}/>
         </>
     )
 }
