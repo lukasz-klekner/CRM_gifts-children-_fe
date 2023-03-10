@@ -1,4 +1,5 @@
 import { MouseEvent } from "react";
+import { Link } from "react-router-dom";
 import { GiftItem } from "types";
 
 interface Error {
@@ -32,8 +33,11 @@ export const GiftTableRow = ({gift, onGiftsChange }: GiftTableRowProps) => {
 
     return(
         <tr>
-            <td>{gift._id?.toString()}</td>
-            <td>{gift.name}</td>
+            <td>
+                <Link to={`/gift/${gift._id}`}>
+                    {gift.name}
+                </Link>
+                </td>
             <td>{gift.amount}</td>
             <td><button onClick={onDeleteGiftItem}>🗑</button></td>
         </tr>
